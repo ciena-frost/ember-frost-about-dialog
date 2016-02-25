@@ -30,7 +30,7 @@ ember install ember-frost-about-dialog
 | `dialogType` | `string`|  | Name of company |
 | `dialogTitle` | `string`|  | Name of product |
 | `dialogMessage` | `string`|  | Message for about dialog |
-| `dialogServerMessage` | `string`|  | Message for about dialog from the server |
+| `dialogServerMessage` | `string`|  | Message from the server |
 | `dialogCopyrightText` | `string`|  | Copyright text |
 | `dialogLicenseText` | `string`|  | License text |
 
