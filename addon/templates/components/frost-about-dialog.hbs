@@ -1,2 +1,32 @@
-ember-frost-about-dialog component
-{{yield}}
+<div class="overlay">
+  <div class="modal">
+    {{#frost-button on-click=(action "cancel") class="close medium"}}
+      <div class="icon">
+        {{frost-icon icon='frost/close-circle'}}
+      </div>
+    {{/frost-button}}
+    <div class="header-row">
+      <div class="branding-strip">
+        {{frost-icon icon=brandingStripPath}}
+      </div>
+      <div class="header">
+        {{frost-icon class=(concat 'branding-logo ' type) icon=brandingLogoPath}}
+        <div class="title">{{title}}</div>
+        <div class="dialog-message">{{message}}</div>
+				{{#each serverMessage as |sMessage|}}
+            <div class="server-message">{{sMessage}}</div>
+				{{/each}}
+      </div>
+    </div>
+    <div class="body">
+      <div style=" height:200px; overflow: auto">
+        <div class="read-only">
+          <div class="license-text">{{{copyrightText}}}</div>
+          {{#each licenseText as |lText|}}
+            <div class="license-text">{{{lText}}}</div>
+          {{/each}}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
