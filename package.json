@@ -2,6 +2,7 @@
   "name": "ember-frost-about-dialog",
   "version": "1.0.0",
   "description": "The default blueprint for ember-cli addons.",
+  "frostGuideDirectory": "design-patterns/about",
   "directories": {
     "doc": "doc",
     "test": "tests"
