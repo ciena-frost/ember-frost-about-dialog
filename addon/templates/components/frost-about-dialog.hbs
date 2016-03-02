@@ -7,10 +7,10 @@
     {{/frost-button}}
     <div class="header-row">
       <div class="branding-strip">
-        {{frost-icon icon=brandingStripPath}}
+        {{frost-icon icon=(concat 'app/' brandingStripPath)}}
       </div>
       <div class="header">
-        {{frost-icon class=(concat 'branding-logo ' type) icon=brandingLogoPath}}
+        {{frost-icon class=(concat 'branding-logo ' type) icon=(concat 'app/' brandingLogoPath)}}
         <div class="title">{{title}}</div>
         <div class="dialog-message">{{message}}</div>
 				{{#each serverMessage as |sMessage|}}
