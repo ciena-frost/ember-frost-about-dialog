@@ -1,7 +1,7 @@
 {
   "name": "ember-frost-about-dialog",
-  "version": "1.1.2",
-  "description": "The default blueprint for ember-cli addons.",
+  "version": "1.1.4",
+  "description": "Simple about dialog for Ember apps.",
   "frostGuideDirectory": "ui-components/content-views/about-dialog",
   "directories": {
     "doc": "doc",
