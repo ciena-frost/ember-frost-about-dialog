@@ -11,13 +11,25 @@ module.exports = [
     modal: {
       withParams: 'isAboutVisible',
       dialogClass: 'frost-bunsen-form-dialog',
-       otherParams: [
-        { dialogType: 'company' },
-        { dialogTitle: 'title' },
-        { dialogMessage: 'message' },
-        { dialogServerMessage: 'serverMessage' },
-        { dialogCopyrightText: 'copyrightText' },
-        { dialogLicenseText: 'licenseText' }
+      otherParams: [
+        {
+          dialogType: 'company'
+        },
+        {
+          dialogTitle: 'title'
+        },
+        {
+          dialogMessage: 'message'
+        },
+        {
+          dialogServerMessage: 'serverMessage'
+        },
+        {
+          dialogCopyrightText: 'copyrightText'
+        },
+        {
+          dialogLicenseText: 'licenseText'
+        }
       ],
       actions: {
         save: 'dialogConfirmed'

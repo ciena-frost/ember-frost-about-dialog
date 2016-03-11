@@ -7,7 +7,7 @@ var Router = Ember.Router.extend({
 })
 
 Router.map(function () {
-    let routerConfig = config.APP.routingConfig
+  let routerConfig = config.APP.routingConfig
   routerConfig.forEach((item) => {
     addRoute.call(this, item)
   })
