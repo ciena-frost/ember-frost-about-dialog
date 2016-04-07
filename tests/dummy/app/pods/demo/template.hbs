@@ -1,2 +1,7 @@
 {{liquid-modal}}
-{{#frost-button priority='primary' size='medium' on-click=(action "toggleAboutDialog" 'company')}}Company{{/frost-button}}
+{{frost-button
+  priority='primary'
+  size='medium'
+  onClick=(action "toggleAboutDialog" 'company')
+  text='About Dialog'
+}}

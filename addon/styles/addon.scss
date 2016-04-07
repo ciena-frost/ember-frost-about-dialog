@@ -1,4 +1,6 @@
-@import 'node_modules/ember-frost-theme/scss/frost-theme';
+@import 'node_modules/ember-frost-core/addon/styles/frost-theme';
+@import 'node_modules/ember-frost-core/addon/styles/frost-app';
+
 .frost-about-dialog {
   .overlay {
     position: fixed;

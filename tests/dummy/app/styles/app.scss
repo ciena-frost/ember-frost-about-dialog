@@ -1,8 +1,8 @@
-@import 'frost-core';
-@import 'frost-theme';
+@import 'node_modules/ember-frost-core/addon/styles/frost-theme';
+@import 'node_modules/ember-frost-core/addon/styles/frost-app';
 
 .dummy-body {
-  margin-left: 20px;
+  padding: 20px;
 }
 
 .dummy-notification-container {
@@ -13,10 +13,4 @@
   width: 80%;
   max-width: 400px;
   margin: auto;
-}
-
-.frost-tabs.iframe {
-  .navigation {
-    display: none;
-  }
 }
