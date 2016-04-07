@@ -1,21 +1,27 @@
 <div class="overlay">
   <div class="modal">
-    {{#frost-button on-click=(action "cancel") class="close medium"}}
+    {{#frost-button
+      onClick=(action "cancel")
+      class="close"
+      size="medium"}}
       <div class="icon">
         {{frost-icon icon='frost/close-circle'}}
       </div>
     {{/frost-button}}
     <div class="header-row">
       <div class="branding-strip">
-        {{frost-icon icon=(concat 'app/' brandingStripPath)}}
+        {{frost-icon
+          icon=(concat 'app/' brandingStripPath)}}
       </div>
       <div class="header">
-        {{frost-icon class=(concat 'branding-logo ' type) icon=(concat 'app/' brandingLogoPath)}}
+        {{frost-icon
+          class=(concat 'branding-logo ' type)
+          icon=(concat 'app/' brandingLogoPath)}}
         <div class="title">{{title}}</div>
         <div class="dialog-message">{{message}}</div>
-				{{#each serverMessage as |sMessage|}}
+        {{#each serverMessage as |sMessage|}}
             <div class="server-message">{{sMessage}}</div>
-				{{/each}}
+        {{/each}}
       </div>
     </div>
     <div class="body">
