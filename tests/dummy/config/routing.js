@@ -10,7 +10,6 @@ module.exports = [
     modalName: 'frost-about-dialog',
     modal: {
       withParams: 'isAboutVisible',
-      dialogClass: 'frost-bunsen-form-dialog',
       otherParams: [
         {
           dialogType: 'company'
@@ -30,10 +29,7 @@ module.exports = [
         {
           dialogLicenseText: 'licenseText'
         }
-      ],
-      actions: {
-        save: 'dialogConfirmed'
-      }
+      ]
     }
   }
 ]

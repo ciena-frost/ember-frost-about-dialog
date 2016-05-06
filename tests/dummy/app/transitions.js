@@ -1,3 +1,5 @@
-// import { animate, Promise } from "liquid-fire";
+import aboutDialogTransitions from 'ember-frost-about-dialog/transitions'
 
-export default function () {}
+export default function () {
+  aboutDialogTransitions.apply(this, arguments)
+}
