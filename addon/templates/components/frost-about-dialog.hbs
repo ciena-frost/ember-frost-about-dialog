@@ -1,7 +1,18 @@
-<div class="overlay">
-  <div class="modal">
+{{#ember-remodal
+  forService=true
+  closeOnOutsideClick=false
+  closeOnEscape=false
+  disableNativeClose=true
+  dataTestId='about-modal-dialog'
+  name=modalName as |modal|}}
+    {{yield}}
+    {{#modal.open}}
+      {{#yield-slot 'target'}}
+        {{yield}}
+      {{/yield-slot}}
+    {{/modal.open}}
     {{#frost-button
-      onClick=(action "cancel")
+      onClick=(action "close")
       class="close"
       size="medium"}}
       <div class="icon">
@@ -10,13 +21,12 @@
     {{/frost-button}}
     <div class="header-row">
       <div class="branding-strip">
-        {{frost-icon
-          icon=(concat 'app/' brandingStripPath)}}
+        {{frost-icon icon=stripPath}}
       </div>
       <div class="header">
         {{frost-icon
-          class=(concat 'branding-logo ' type)
-          icon=(concat 'app/' brandingLogoPath)}}
+          class='branding-logo'
+          icon=logoPath}}
         <div class="title">{{title}}</div>
         <div class="dialog-message">{{message}}</div>
         {{#each serverMessage as |sMessage|}}
@@ -34,5 +44,4 @@
         </div>
       </div>
     </div>
-  </div>
-</div>
+{{/ember-remodal}}

@@ -2,15 +2,17 @@
 @import 'node_modules/ember-frost-core/addon/styles/frost-app';
 
 .dummy-body {
+  height: 100%;
   padding: 20px;
+  background-color: $frost-color-lgrey-5;
 }
 
 .dummy-notification-container {
   position: fixed;
   top: 60px;
   right: 10px;
-  z-index: 999;
   width: 80%;
   max-width: 400px;
   margin: auto;
+  z-index: 999;
 }

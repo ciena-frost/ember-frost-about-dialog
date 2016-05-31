@@ -1,7 +1,52 @@
-{{liquid-modal}}
-{{frost-button
-  priority='primary'
-  size='medium'
-  onClick=(action "toggleAboutDialog" 'company')
-  text='About Dialog'
+<div class="dummy-body">
+  <div class="section">
+    <div class="example">
+      <div class='title'>
+        frost-about-dialog
+      </div>
+      <div class="demo">
+        {{#frost-about-dialog
+          title='Product Name'
+          message='Product tag line bacon ipsum color ametr turducken tial'
+          serverMessage=dialogServerMessage
+          licenseText=dialogLicenseText
+          copyrightText='Copyright &copy; 2016 Company, all rights reserved.'
+          logoPath='app/company'
+          stripPath='app/company-strip'
+          modalName=modalName
+        }}
+          {{#block-slot slot 'target'}}
+            {{frost-button
+              priority='primary'
+              size='medium'
+              text='Launch About Dialog'
+            }}
+          {{/block-slot}}
+        {{/frost-about-dialog}}
+      </div>
+      <div class='snippet'>
+        {{format-markdown "```handlebars
+{{#frost-about-dialog
+  title='Product Name'
+  message='Product tag line bacon ipsum color ametr turducken tial'
+  serverMessage=dialogServerMessage
+  licenseText=dialogLicenseText
+  copyrightText='Copyright &copy; 2016 Company, all rights reserved.'
+  logoPath='app/company'
+  stripPath='app/company-strip'
+  modalName=modalName
 }}
+  {{#block-slot slot 'target'}}
+    {{frost-button
+      priority='primary'
+      size='medium'
+      text='Launch About Dialog'
+    }}
+  {{/block-slot}}
+{{/frost-about-dialog}}
+  ```"
+      }}
+      </div>
+    </div>
+  </div>
+</div>
