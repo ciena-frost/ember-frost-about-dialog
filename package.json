@@ -1,6 +1,6 @@
 {
   "name": "ember-frost-about-dialog",
-  "version": "2.1.0",
+  "version": "3.0.0",
   "description": "Simple about dialog for Ember apps.",
   "frostGuideDirectory": "ui-components/content-views/about-dialog",
   "directories": {
