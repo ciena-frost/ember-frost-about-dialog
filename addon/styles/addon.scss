@@ -1,102 +1,130 @@
 @import 'node_modules/ember-frost-core/addon/styles/frost-theme';
 
+$remodal-overlay-color: rgba($frost-color-white, .8);
+$modal-bow-shadow: rgba(0, 0, 0, .25);
+
+.remodal-overlay {
+  top: 50px;
+  left: 0;
+  background-color: $remodal-overlay-color;
+  cursor: default;
+}
+
 .frost-about-dialog {
-  .overlay {
-    position: fixed;
-    left: 0;
-    top: 50px;
-    height: 100%;
-    width: 100%;
-    background-color: rgba($frost-color-white, 0.8);
-    cursor: default;
-    display: flex;
-    justify-content: center;
-    align-items: center
-  }
-  .modal {
-    position: relative;
-    width: 510px;
-    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.25);
-    background-color: rgba($frost-color-white, 1);
-    .frost-button {
-      background: transparent;
-      outline: none;
-      .icon svg {
-        * {
-          fill: inherit;
+  &.ember-remodal {
+    &.window {
+      position: relative;
+      width: 510px;
+      padding: 0;
+      background-color: $frost-color-white;
+      box-shadow: 0 3px 8px $modal-bow-shadow;
+
+      .frost-button {
+        outline: none;
+        background: transparent;
+
+        &:hover {
+          box-shadow: none;
         }
-        g {
-          fill: #009EEF !important;
-        }
-        height: 20px;
-        width: 20px;
-        circle {
-          fill: white;
+
+        .icon {
+          svg {
+            * {
+              fill: inherit;
+            }
+
+            g {
+              fill: $frost-color-blue-1;
+            }
+            width: 20px;
+            height: 20px;
+
+            circle {
+              fill: $frost-color-white;
+            }
+          }
         }
       }
-    }
-    .frost-button:hover {
-      box-shadow: none;
-    }
-    .close {
-      position: absolute;
-      top: -20px;
-      right: -30px;
-    }
-  }
-  .header-row {
-    display: flex;
-    flex-direction: row;
-    .branding-strip {
-      width: 5px;
-      height: 230px;
-      overflow: hidden;
-      > .frost-icon {
-        width: 5px;
-        height: 340px;
+
+      .close {
+        position: absolute;
+        top: -20px;
+        right: -30px;
       }
-    }
-  }
-  .header {
-    margin-left: 25px;
-    .branding-logo.blueplanet-about {
-      height: 110px;
-      padding: 25px 0 20px 0;
-    }
-    .branding-logo.ciena-about {
-      height: 100px;
-      padding: 25px 0;
-    }
-    .title {
-      font-size: $frost-font-xl;
-      color: $frost-color-grey-3;
-      padding-bottom: 5px;
-    }
-    .dialog-message {
-      font-size: $frost-font-s;
-      color: $frost-color-grey-5;
-      margin-bottom: 25px;
-    }
-    .server-message {
-      font-size: $frost-font-xs;
-      color: $frost-color-grey-5;
-    }
-    .server-message + .server-message {
-      padding-top: 5px;
-    }
-  }
-  .body {
-    padding: 0 5px 0 25px;
-    background-color: $frost-color-lgrey-3;
-    font-size: $frost-font-xs;
-    color: $frost-color-grey-5;
-    .read-only {
-      margin-right: 25px;
-      margin-top: 25px;
-      margin-bottom: 25px;
-    }
-    .license-text+.license-text {
-      padding-top: 10px;
+
+      .header-row {
+        display: flex;
+        flex-direction: row;
+
+        .branding-strip {
+          width: 5px;
+          height: 230px;
+          overflow: hidden;
+
+          > .frost-icon {
+            width: 5px;
+            height: 340px;
+          }
+        }
+      }
+
+      .header {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-left: 25px;
+
+        .branding-logo {
+          .blueplanet-about {
+            height: 110px;
+            padding: 25px 0 20px;
+          }
+
+          .ciena-about {
+            height: 100px;
+            padding: 25px 0;
+          }
+        }
+
+        .title {
+          padding-bottom: 5px;
+          color: $frost-color-grey-3;
+          font-size: $frost-font-xl;
+        }
+
+        .dialog-message {
+          margin-bottom: 25px;
+          color: $frost-color-grey-5;
+          font-size: $frost-font-s;
+        }
+
+        .server-message {
+          color: $frost-color-grey-5;
+          font-size: $frost-font-xs;
+        }
+
+        .server-message + .server-message {
+          padding-top: 5px;
+        }
+      }
+
+      .body {
+        padding: 0 5px 0 25px;
+        background-color: $frost-color-lgrey-3;
+        color: $frost-color-grey-5;
+        font-size: $frost-font-xs;
+
+        .read-only {
+          margin-top: 25px;
+          margin-right: 25px;
+          margin-bottom: 25px;
+          text-align: left;
+        }
+
+        .license-text+.license-text {
+          padding-top: 10px;
+        }
+      }
     }
   }
 }

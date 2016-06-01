@@ -10,12 +10,12 @@
 [![Travis][ci-img]][ci-url] [![Coveralls][cov-img]][cov-url] [![NPM][npm-img]][npm-url]
 
 # ember-frost-about-dialog
-simple about dialog
+A simple 'About' modal dialog using [ember-remodal](http://sethbrasile.github.io/ember-remodal/#/components)
 
- * [Installation](#Installation)
- * [API](#API)
- * [Examples](#Examples)
- * [Contributing](#Contributing)
+ * [Installation](#installation)
+ * [API](#api)
+ * [Examples](#examples)
+ * [Development](#development)
 
 ## Installation
 ```
@@ -25,38 +25,38 @@ ember install ember-frost-about-dialog
 ## API
 | Attribute | Type | Value | Description |
 | --------- | ---- | ----- | ----------- |
-| `isAboutVisible` | `boolean` | `true` | Displays about dialog |
-|  |  | `false` | Hides about dialog |
-| `dialogType` | `string`|  | Name of company |
-| `dialogTitle` | `string`|  | Name of product |
-| `dialogMessage` | `string`|  | Message for about dialog |
-| `dialogServerMessage` | `string`|  | Message from the server |
-| `dialogCopyrightText` | `string`|  | Copyright text |
-| `dialogLicenseText` | `string`|  | License text |
-
+| `modalName` | `string` |  | Required name of the about modal |
+| `title` | `string` |  | Name of product |
+| `message` | `string` |  | Product tag line for about dialog |
+| `serverMessage` | `array` |  | Array of strings - Message from the server |
+| `copyrightText` | `array` |  | Array of Copyright text string where array items are separated by line breaks |
+| `logoPath` | `string` |  | Path to logo svg |
+| `stripPath` | `string` |  | Path to branding strip svg |
+| `licenseText` | `array` |  | Array of license text string where array items are separated by line breaks |
+| `target` | `block-slot` | <ember-block-slot template> | Block-slot template to yield the element that will launch the dialog on click |
 
 
 ## Examples
-Triggered by pressing a button
 ```handlebars
-{{#frost-button priority='primary' size='medium' on-click=(action "toggleAboutDialog" 'company')}}Company{{/frost-button}}
-```
+{{#frost-about-dialog
+  title='Product Name'
+  message='Product tag line bacon ipsum color ametr turducken tial'
+  serverMessage=dialogServerMessage
+  licenseText=dialogLicenseText
+  copyrightText='Copyright &copy; 2016 Company, all rights reserved.'
+  logoPath='app/company'
+  stripPath='app/company-strip'
+  modalName=modalName
+}}
+  {{#block-slot slot 'target'}}
+    {{frost-button
+      priority='primary'
+      size='medium'
+      text='Launch About Dialog'
+    }}
+  {{/block-slot}}
+{{/frost-about-dialog}}
 
-Corresponding action that sets the fields.
-```
-  actions: {
-    toggleAboutDialog (type) {
-      this.set('isAboutVisible', true)
-      this.set('dialogType', type)
-      this.set('dialogTitle', 'Product Name')
-      this.set('dialogMessage', 'Product tag line bacon ipsum color ametr turducken tial')
-      this.set('dialogServerMessage', ['Server Version: 5.0.0 257541', 'Client Version: 5.0.0'])
-      this.set('dialogCopyrightText', 'Copyright &copy; 2016 Company, all rights reserved.')
-      this.set('dialogLicenseText', [
-        'This is example license text, overriding the default license text in frost-about-dialog component.',
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
-      ])
-    }
 ```    
 
 ## Development
