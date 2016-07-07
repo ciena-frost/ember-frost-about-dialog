@@ -1,3 +1,9 @@
+# 4.0.0
+ **Added** support for latest `ember-frost-core` (icon packs in `frost-icon`)
+ * **Changed** the `logoPath` and `stripPath` properties to `logoIcon` and `stripIcon` respectively
+ * **Added** an `iconPack` property which allows setting the `pack` property on internal `frost-icon` components used in the dialog.
+ * **Fixed** an issue where the class `frost-about-dialog` would be added to **all** `ember-remodel` modals when the about dialog launches. 
+
 # 3.0.0
 ## Changed
 - **BREAKING** Using [ember-remodal](http://sethbrasile.github.io/ember-remodal/) addon to simplify modal dialog support.
