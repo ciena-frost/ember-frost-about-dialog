@@ -18,113 +18,113 @@ $modal-bow-shadow: rgba(0, 0, 0, .25);
       padding: 0;
       background-color: $frost-color-white;
       box-shadow: 0 3px 8px $modal-bow-shadow;
+    }
+  }
 
-      .frost-button {
-        outline: none;
-        background: transparent;
+  .frost-button {
+    outline: none;
+    background: transparent;
 
-        &:hover {
-          box-shadow: none;
+    &:hover {
+      box-shadow: none;
+    }
+
+    .icon {
+      svg {
+        * {
+          fill: inherit;
         }
 
-        .icon {
-          svg {
-            * {
-              fill: inherit;
-            }
-
-            g {
-              fill: $frost-color-blue-1;
-            }
-            width: 20px;
-            height: 20px;
-
-            circle {
-              fill: $frost-color-white;
-            }
-          }
+        g {
+          fill: $frost-color-blue-1;
         }
-      }
+        width: 20px;
+        height: 20px;
 
-      .close {
-        position: absolute;
-        top: -20px;
-        right: -30px;
-      }
-
-      .header-row {
-        display: flex;
-        flex-direction: row;
-
-        .branding-strip {
-          width: 5px;
-          height: 230px;
-          overflow: hidden;
-
-          > .frost-icon {
-            width: 5px;
-            height: 340px;
-          }
+        circle {
+          fill: $frost-color-white;
         }
       }
+    }
+  }
 
-      .header {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        margin-left: 25px;
+  .close {
+    position: absolute;
+    top: -20px;
+    right: -30px;
+  }
 
-        .branding-logo {
-          .blueplanet-about {
-            height: 110px;
-            padding: 25px 0 20px;
-          }
+  .header-row {
+    display: flex;
+    flex-direction: row;
 
-          .ciena-about {
-            height: 100px;
-            padding: 25px 0;
-          }
-        }
+    .branding-strip {
+      width: 5px;
+      height: 230px;
+      overflow: hidden;
 
-        .title {
-          padding-bottom: 5px;
-          color: $frost-color-grey-3;
-          font-size: $frost-font-xl;
-        }
+      > .frost-icon {
+        width: 5px;
+        height: 340px;
+      }
+    }
+  }
 
-        .dialog-message {
-          margin-bottom: 25px;
-          color: $frost-color-grey-5;
-          font-size: $frost-font-s;
-        }
+  .header {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 25px;
 
-        .server-message {
-          color: $frost-color-grey-5;
-          font-size: $frost-font-xs;
-        }
-
-        .server-message + .server-message {
-          padding-top: 5px;
-        }
+    .branding-logo {
+      .blueplanet-about {
+        height: 110px;
+        padding: 25px 0 20px;
       }
 
-      .body {
-        padding: 0 5px 0 25px;
-        background-color: $frost-color-lgrey-3;
-        color: $frost-color-grey-5;
-        font-size: $frost-font-xs;
-
-        .read-only {
-          margin-top: 25px;
-          margin-right: 25px;
-          margin-bottom: 25px;
-          text-align: left;
-        }
-
-        .license-text+.license-text {
-          padding-top: 10px;
-        }
+      .ciena-about {
+        height: 100px;
+        padding: 25px 0;
       }
+    }
+
+    .title {
+      padding-bottom: 5px;
+      color: $frost-color-grey-3;
+      font-size: $frost-font-xl;
+    }
+
+    .dialog-message {
+      margin-bottom: 25px;
+      color: $frost-color-grey-5;
+      font-size: $frost-font-s;
+    }
+
+    .server-message {
+      color: $frost-color-grey-5;
+      font-size: $frost-font-xs;
+    }
+
+    .server-message + .server-message {
+      padding-top: 5px;
+    }
+  }
+
+  .body {
+    padding: 0 5px 0 25px;
+    background-color: $frost-color-lgrey-3;
+    color: $frost-color-grey-5;
+    font-size: $frost-font-xs;
+
+    .read-only {
+      margin-top: 25px;
+      margin-right: 25px;
+      margin-bottom: 25px;
+      text-align: left;
+    }
+
+    .license-text+.license-text {
+      padding-top: 10px;
     }
   }
 }
