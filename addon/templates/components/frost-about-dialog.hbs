@@ -4,44 +4,51 @@
   closeOnEscape=false
   disableNativeClose=true
   dataTestId='about-modal-dialog'
-  name=modalName as |modal|}}
-    {{yield}}
-    {{#modal.open}}
-      {{#yield-slot 'target'}}
-        {{yield}}
-      {{/yield-slot}}
-    {{/modal.open}}
-    {{#frost-button
-      onClick=(action 'close')
-      class='close'
-      size='medium'}}
-      <div class="icon">
-        {{frost-icon icon='frost/close-circle'}}
-      </div>
-    {{/frost-button}}
-    <div class="header-row">
-      <div class="branding-strip">
-        {{frost-icon icon=stripPath}}
-      </div>
-      <div class="header">
-        {{frost-icon
-          class='branding-logo'
-          icon=logoPath}}
-        <div class="title">{{title}}</div>
-        <div class="dialog-message">{{message}}</div>
-        {{#each serverMessage as |sMessage|}}
-            <div class="server-message">{{sMessage}}</div>
+  modalClasses='frost-about-dialog'
+  name=modalName as |modal|
+}}
+  {{yield}}
+  {{#modal.open}}
+    {{#yield-slot 'target'}}
+      {{yield}}
+    {{/yield-slot}}
+  {{/modal.open}}
+  {{#frost-button
+    onClick=(action 'close')
+    class='close'
+    size='medium'}}
+    <div class='icon'>
+      {{frost-icon pack='frost' icon='close-circle'}}
+    </div>
+  {{/frost-button}}
+  <div class='header-row'>
+    <div class='branding-strip'>
+      {{frost-icon
+        pack=iconPack
+        icon=stripIcon
+      }}
+    </div>
+    <div class='header'>
+      {{frost-icon
+        class='branding-logo'
+        pack=iconPack
+        icon=logoIcon
+      }}
+      <div class='title'>{{title}}</div>
+      <div class='dialog-message'>{{message}}</div>
+      {{#each serverMessage as |sMessage|}}
+          <div class='server-message'>{{sMessage}}</div>
+      {{/each}}
+    </div>
+  </div>
+  <div class='body'>
+    <div style=' height:200px; overflow: auto'>
+      <div class='read-only'>
+        <div class='license-text'>{{{copyrightText}}}</div>
+        {{#each licenseText as |lText|}}
+          <div class='license-text'>{{{lText}}}</div>
         {{/each}}
       </div>
     </div>
-    <div class="body">
-      <div style=" height:200px; overflow: auto">
-        <div class="read-only">
-          <div class="license-text">{{{copyrightText}}}</div>
-          {{#each licenseText as |lText|}}
-            <div class="license-text">{{{lText}}}</div>
-          {{/each}}
-        </div>
-      </div>
-    </div>
+  </div>
 {{/ember-remodal}}
