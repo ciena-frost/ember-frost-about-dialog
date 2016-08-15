@@ -1,3 +1,7 @@
+# 4.0.1
+
+* Updated to latest version of `liquid-fire`.
+
 # 4.0.0
  **Added** support for latest `ember-frost-core` (icon packs in `frost-icon`)
  * **Changed** the `logoPath` and `stripPath` properties to `logoIcon` and `stripIcon` respectively
