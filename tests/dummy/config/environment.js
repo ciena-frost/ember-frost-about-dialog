@@ -42,7 +42,7 @@ module.exports = function (environment) {
   }
 
   if (environment === 'production') {
-    ENV.baseURL = '/frost-about-dialog'
+    ENV.baseURL = '/ember-frost-about-dialog'
     ENV.isDemo = true
     ENV['ember-cli-mirage'] = {
       enabled: true
